@@ -1,1 +1,57 @@
-<p>global-navigation works!</p>
+<nav class="navbar">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <div class="navbar-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../../assets/logo.png" alt="Company Logo">
+        </a>
+      </div>
+  
+      <div class="nav-items">
+        <ul class="nav-links">
+          <li *ngFor="let item of navItems">
+            <a [routerLink]="item.path" routerLinkActive="active" class="nav-link">
+              {{ item.label }}
+              <span *ngIf="item.hasDropdown" class="dropdown-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <a routerLink="/shop" class="cta-button">Shop With Us</a>
+      </div>
+  
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.open]="isMenuOpen">
+      <ul class="mobile-nav-links">
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" routerLinkActive="active" class="mobile-nav-link">
+            {{ item.label }}
+            <span *ngIf="item.hasDropdown" class="dropdown-indicator">+</span>
+          </a>
+        </li>
+      </ul>
+      <a routerLink="/invest" class="mobile-cta-button">Vallair Invest</a>
+    </div>
+  </nav>

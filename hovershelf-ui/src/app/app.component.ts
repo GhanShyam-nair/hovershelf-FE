@@ -3,6 +3,7 @@
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 import { Component } from '@angular/core';
+import {GlobalNavigationComponent} from './components/global-navigation/global-navigation.component';
 import { MasterlayoutComponent } from './components/masterlayout/masterlayout.component';
 import { SafePipe } from './pipes/safe.pipe';
 
@@ -13,7 +14,8 @@ import { SafePipe } from './pipes/safe.pipe';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    MasterlayoutComponent
+    MasterlayoutComponent,
+    GlobalNavigationComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

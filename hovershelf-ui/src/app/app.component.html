@@ -1,12 +1,6 @@
 <div class="app-container">
-  <header>
-    <h1>{{title}}</h1>
-    <nav>
-      <a routerLink="/home" routerLinkActive="active"></a>
-    </nav>
-  </header>
-  
-  <main>
+  <app-global-navigation></app-global-navigation>
+  <div class="page-content">
     <router-outlet></router-outlet>
-  </main>
+  </div>
 </div>

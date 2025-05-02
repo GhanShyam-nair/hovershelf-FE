@@ -1,11 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-global-navigation',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule,CommonModule],
   templateUrl: './global-navigation.component.html',
   styleUrl: './global-navigation.component.scss'
 })
-export class GlobalNavigationComponent {
+export class GlobalNavigationComponent 
+{
+    isMenuOpen: boolean = false;
+    navItems = [
+      { label: 'About', path: '/about', hasDropdown: false },
+      { label: 'Contact', path: '/contact', hasDropdown: false },
+      { label: 'Project', path: '/project', hasDropdown: true, dropdownItems: ["Ai Based Email SaaS cleaner ", "c# spotify Dashboard", "Cheddar"] }
+    ];
+    toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
 
 }
