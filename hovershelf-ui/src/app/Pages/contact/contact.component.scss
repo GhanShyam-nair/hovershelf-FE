@@ -572,6 +572,7 @@ img {
 }
 
 // Success & Error states
+/* Base styling for success and error containers */
 .contact-form__success-container,
 .contact-form__error-container {
   display: none;
@@ -580,16 +581,22 @@ img {
   margin-top: 20px;
 }
 
+/* Apply display block when containers have active class */
+.contact-form__success-container.active,
+.contact-form__error-container.active {
+  display: block;
+}
+
 .contact-form__c-success {
   text-align: center;
-  
-  .contact-form-success__c-text {
-    margin-bottom: 30px;
-  }
-  
-  .btn {
-    margin-top: 20px;
-  }
+}
+
+.contact-form-success__c-text {
+  margin-bottom: 30px;
+}
+
+.contact-form__c-success .btn {
+  margin-top: 20px;
 }
 
 .contact-form__c-error {
@@ -597,4 +604,16 @@ img {
   background-color: rgba($orange, 0.1);
   border-radius: 8px;
   text-align: center;
+}
+
+/* Optional: Add some transition effects for a smoother appearance */
+.contact-form__success-container,
+.contact-form__error-container {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.contact-form__success-container.active,
+.contact-form__error-container.active {
+  opacity: 1;
 }

@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 export class ContactComponent implements OnInit {
   activeTab: string = 'tab1';
   isDropdownOpen: boolean = false;
+  isSuccessMessageVisible: string = "none";
   @ViewChild('firstNameInput') firstNameInput!: ElementRef<HTMLInputElement>;
   @ViewChild('lastNameInput') lastNameInput!: ElementRef<HTMLInputElement>;
   @ViewChild('emailInput') emailInput!: ElementRef<HTMLInputElement>;
@@ -95,7 +96,9 @@ export class ContactComponent implements OnInit {
     this.switchTab('tab1', new Event('click'));
   }
 
-  sendForm() {
+  sendForm(event: Event) {
+    event.preventDefault();
     console.log('Form sent!');
+    this.isSuccessMessageVisible = 'done';
   }
 }

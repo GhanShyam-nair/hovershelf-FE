@@ -34,7 +34,7 @@
             <div class="nav-menu__title text--dark-green">Contact us</div>
             
             <div class="nav-drop__c-contact-form is--multi-step-form">
-                <form id="contact-form" name="contact-form" method="get" class="nav-drop__contact-form">
+                <form id="contact-form" name="contact-form" method="get" class="nav-drop__contact-form" *ngIf="isSuccessMessageVisible !== 'done'">
                     <div class="contact-form__c-tabs">
                         <div class="contact-form__c-tab-menu" role="tablist">
                             <a data-tab="tab1" class="tab-link1" [class.active]="activeTab === 'tab1'" href="#tab1-content" role="tab" aria-controls="tab1-content" aria-selected="true" (click)="switchTab('tab1',$event)">
@@ -115,7 +115,7 @@
                                         <div class="round-btn is--dark-green is--contact-form__back-btn" id="back-btn" (click)="onBackButtonClick()">
                                             <img loading="lazy" src="../../../assets/backcontact.svg" alt="Arrow icon" class="back-btn__icon">
                                         </div>
-                                        <button type="submit" class="btn is--dark-green is--multi-step-submit"  (click)="sendForm()">Send</button>
+                                        <button type="submit" class="btn is--dark-green is--multi-step-submit"  (click)="sendForm($event)">Send</button>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                 </form>
                 
                 <!-- Success message -->
-                <div class="contact-form__success-container" role="region" aria-label="contact-form success">
+                <div class="contact-form__success-container" role="region" aria-label="contact-form success" [ngClass]="{'active': isSuccessMessageVisible === 'done'}">
                     <div class="contact-form__c-success">
                         <div class="title-h3 text--dark-green">Your message has been sent</div>
                         <div class="contact-form-success__c-text">
@@ -133,15 +133,15 @@
                                 In the meantime, do not hesitate to visit our Media:
                             </div>
                         </div>
-                        <a href="https://laboucle.media/" target="_blank" class="btn is--dark-outline">
-                            <div class="btn-text">The media loop</div>
-                            <img src="images/lemedia-link-icon.svg" loading="lazy" alt="The media icon loop" class="btn-icon">
+                        <a href="https://hovershelf.io/home" target="_blank" class="btn is--dark-outline">
+                            <div class="btn-text">Back to home page</div>
+                            <img src="../../../assets/loopicon.svg" loading="lazy" alt="The media icon loop" class="btn-icon" >
                         </a>
                     </div>
                 </div>
                 
                 <!-- Error message -->
-                <div class="contact-form__error-container is--nav-contact" role="region" aria-label="contact-form failure">
+                <div class="contact-form__error-container is--nav-contact" role="region" aria-label="contact-form failure" [class.active]="isSuccessMessageVisible=='notdone'">
                     <div class="contact-form__c-error">
                         <div class="contact-form__error">
                             <div class="regular-paragraph text--orange">Oops! An error has occurred.</div>
