@@ -15,7 +15,7 @@ export class GlobalNavigationComponent
     navItems = [
       { label: 'About', path: '/about', hasDropdown: false },
       { label: 'Contact', path: '/contact', hasDropdown: false },
-      { label: 'Project', path: '/project', hasDropdown: true, dropdownItems: ["Ai Based Email SaaS cleaner ", "c# spotify Dashboard", "Cheddar"] }
+      { label: 'Projects', path: '/project', hasDropdown: true, dropdownItems: ["Ai Based Email SaaS cleaner ", "c# spotify Dashboard", "Cheddar"] }
     ];
     toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;

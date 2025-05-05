@@ -264,7 +264,7 @@ img {
   margin-bottom: 30px;
   border-bottom: 1px solid rgba($dark-green, 0.2);
   
-  .tab-link {
+  .tab-link1 {
     padding: 15px 20px;
     margin: 0 10px;
     position: relative;
@@ -300,6 +300,44 @@ img {
       }
     }
   }
+  .tab-link2 {
+    padding: 15px 20px;
+    margin: 0 10px;
+    position: relative;
+    color: rgba($dark-green, 0.6);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $dark-green;
+      transform: scaleX(0);
+      @include transition(transform, 0.3s);
+    }
+    
+    &.active {
+      color: $dark-green;
+      
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+    
+    &:hover {
+      color: $dark-green;
+    }
+    
+    .is--mobile-hidden {
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+
+
 }
 
 .contact-form__tab-content {
@@ -325,6 +363,16 @@ img {
 
 .contact-form__c-field {
   width: 100%;
+  &.has-error {
+    label {
+      color: $orange; // or another color like $orange-dark
+    }
+
+    .contact-form-field {
+      border-color: $orange;
+      box-shadow: 0 0 0 2px rgba($orange, 0.1);
+    }
+  }
   
   label {
     display: block;
@@ -333,6 +381,7 @@ img {
     color: $dark-green;
   }
 }
+
 
 .contact-form-field {
   width: 100%;
@@ -360,6 +409,9 @@ img {
 .contact-form__c-dropdown {
   position: relative;
   width: 100%;
+  &.open .deploy-btn img {
+    transform: rotate(180deg);
+  }
 }
 
 .contact-form__dropdown-toggle {
@@ -399,16 +451,30 @@ img {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
   pointer-events: none;
+  max-height: 250px; 
+  overflow-y: auto; 
   @include transition;
   
   &.is--open-up {
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 5px);
   }
   
   &.open {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     pointer-events: all;
+    display: block;
+  }
+
+  .contact-form__dropdown-option {
+    display: block;
+    padding: 8px 15px;
+    cursor: pointer;
+    @include transition;
+    
+    &:hover {
+      background-color: rgba($dark-green, 0.1);
+    }
   }
   
   .contact-form__dropdown-select {
@@ -417,7 +483,7 @@ img {
     pointer-events: none;
   }
   
-  .contact-form__dropdown-link-template {
+  .contact-form__dropdown a {
     display: block;
     padding: 8px 15px;
     @include transition;
@@ -494,10 +560,15 @@ img {
   @include flex(row, flex-start, center);
   gap: 15px;
   margin-top: 20px;
+  img
+  {
+    transform: rotate(360deg);
+  }
   
   .is--hidden {
     display: none;
   }
+
 }
 
 // Success & Error states
