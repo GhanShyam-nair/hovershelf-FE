@@ -5,7 +5,6 @@ import { MasterlayoutComponent } from './components/masterlayout/masterlayout.co
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: 'about', loadComponent: () => import('./Pages/about/about.component').then(c => c.AboutComponent) },
   { path: 'contact', loadComponent: () => import('./Pages/contact/contact.component').then(c => c.ContactComponent) },
   { path: 'Project', loadComponent: () => import('./Pages/contact/contact.component').then(c => c.ContactComponent) },
   { path: 'shop', loadComponent: () => import('./Pages/shop/shop.component').then(c => c.ShopComponent) },
