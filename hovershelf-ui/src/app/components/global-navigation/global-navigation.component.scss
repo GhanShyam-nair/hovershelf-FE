@@ -15,7 +15,8 @@
     align-items: center;
     margin: 0 auto;
     margin-top: -8px;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem ;
+    
   }
   
   .logo {
@@ -45,7 +46,7 @@
         font-size: 0.95rem;
         font-weight: lighter;
         text-decoration: none;
-        padding: 0.3rem 0.6rem;
+        padding: 0.2rem 0.6rem;
         transition: color 0.3s;
         border-radius: 10px;
         
@@ -55,8 +56,6 @@
         }
         
         &.active {
-          background-color: #363b3e;
-          color:#f8f7f9 ;
           font-weight: 600;
         }
       }
@@ -69,7 +68,7 @@
   
   .navbar-menu-list {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -81,17 +80,22 @@
     align-items: center;
     
     .cta-button {
-      background-color: #f8f7f9;
-      color: #363b3e;
-      padding: 0.3rem 0.6rem;
-      border-radius: 10px; // Soft, curvy edges
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 0.95rem;
       font-weight: lighter;
       text-decoration: none;
-      transition: background-color 0.3s;
+      padding: 0.2rem 0.6rem;
+      transition: color 0.3s;
+      border-radius: 10px;
       
       &:hover {
         background-color: #363b3e;
         color:#f8f7f9 ;
+      }
+      &.active {
+        font-weight: 600;
       }
     }
   }

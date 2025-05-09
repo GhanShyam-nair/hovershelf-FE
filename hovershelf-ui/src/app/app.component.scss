@@ -1,15 +1,5 @@
-.app-global-navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 .page-content {
   margin-top: 40px; /* same as the height of your navigation */
-  padding: 20px;
 }
 .video-container {
   position: relative;
@@ -21,15 +11,15 @@
 }
 video {
   width: 1000px;
-  height: 800px; /* Maintain the aspect ratio */
+  height: 800px; 
   margin-left: 500px;
   margin-bottom: 100px;
-  object-fit: contain; /* Ensure the video fits within the container */
-  outline: none; /* Remove any default outlines */
-  border: none; /* Remove any default borders */
-  display: block; /* Remove any extra space below the video */
+  object-fit: contain; 
+  outline: none; 
+  border: none; 
+  display: block; 
   overflow: hidden;
-  background-color: #fff; /* Ensure the background is white */
+  background-color: #fff; 
 }
 .content-visible {
   display: block;
