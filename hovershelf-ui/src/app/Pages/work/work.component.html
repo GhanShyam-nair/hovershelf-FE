@@ -1,1 +1,8 @@
-<p>work works!</p>
+<div class="press-section">
+    <div class="press-grid">
+      <div class="press-item" *ngFor="let item of workItems">
+        <img [src]="item.imageUrl" [alt]="item.title" />
+      </div>
+    </div>
+  </div>
+  
