@@ -86,25 +86,23 @@ workItems = [
   defItem =     { 
     title: 'Hovershelf', 
     imageUrl: '../../../assets/think-again.png',
-    description: 'A shelf of Products and Services.'
+    description: 'Hovershelf is the parent brand behind a curated portfolio of forward-thinking products and services—spanning AI innovation, digital platforms, design studios, and tech-driven retail. It exists to empower groundbreaking ideas and shape the future through creativity, intelligence, and technology.'
   };
   selectedItem: any = null;
 
   constructor() { }
 
   ngOnInit(): void {
-    // Optional: Set default selected item to show content on page load
-     this.selectedItem = this.defItem;
+    
+    this.selectedItem = this.defItem;
   }
   
   onPressItemClick(item: any, event: any) {
-    // Toggle selection if clicking the same item again
+    
     if (this.selectedItem === item) {
       this.defItem = item;
     } else {
       this.selectedItem = item;
-      
-      // Scroll to the featured image section when an item is clicked
       const featuredSection = document.querySelector('.featured-image-container');
       if (featuredSection) {
         setTimeout(() => {
@@ -115,7 +113,6 @@ workItems = [
   }
 
   onLaunchbuttonClick(item: any, event: any) {
-    // Handle the launch button click event here
     console.log('Launch button clicked for:', item.title);
   }
 }
