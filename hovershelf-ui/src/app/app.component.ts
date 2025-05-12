@@ -13,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   showVideo = true;
+  navbarshow= false;
   @ViewChild('introVideo') introVideo!: ElementRef<HTMLVideoElement>;
 
   constructor(private cdr: ChangeDetectorRef) {}
@@ -21,6 +22,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     const videoPlayed = localStorage.getItem('introVideoPlayed');
     if (videoPlayed === 'true') {
       this.showVideo = false;
+    }
+    const currenturl = window.location.href;
+    if (currenturl.includes('work') || currenturl.includes('home') || currenturl.includes('contact') || currenturl.includes('shop')) {
+      this.navbarshow = true;
     }
   }
 

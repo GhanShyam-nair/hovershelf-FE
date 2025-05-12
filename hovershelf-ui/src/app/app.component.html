@@ -1,7 +1,6 @@
-<div class="video-container" id="videoContainer">
+<div *ngIf="navbarshow" class="video-container" id="videoContainer">
   <div class="app-container">
     <app-global-navigation></app-global-navigation>
-
     <div class="page-content">
       <video #introVideo *ngIf="showVideo" autoplay muted>
         <source src="../assets/Logo-4-[remix]_1.mp4" type="video/mp4">
@@ -9,6 +8,12 @@
       </video>
       <router-outlet *ngIf="!showVideo"></router-outlet>
     </div>
+  </div>
+</div>
+
+<div *ngIf="!navbarshow" class="product-container" id="product-container">
+  <div class="app-container-product">
+      <router-outlet *ngIf="!showVideo"></router-outlet>
   </div>
 </div>
 
