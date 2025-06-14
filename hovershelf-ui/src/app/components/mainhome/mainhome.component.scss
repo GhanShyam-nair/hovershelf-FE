@@ -1,0 +1,153 @@
+.mainhome-header
+{
+    border-bottom: #333 solid 1px; // Darker border for the bottom of the navbar
+}
+.mainhome-header-content
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: 7ch;
+    font-style: justify;
+    word-spacing: -0.045em;
+}
+.imagehead {
+    display: flex;           // Changed from grid to flex
+    justify-content: flex-end; // Right aligns the content
+    width: 50%;
+    padding: 0%;
+    margin-bottom: 20px;
+    img {
+        display: block;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        transition: all 2s ease;
+        overflow: hidden;
+    }
+}
+.mainhome-header-content2
+{
+    border-bottom: #333 solid 1px; // Darker border for the bottom of the navbar
+}
+.mainhome-header-image
+{
+    display: flex;
+}
+.texthead2
+{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 13ch;
+}
+
+.services-tab
+{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2.5ch; 
+}
+.service-content1
+{
+    padding-left: 1rem;
+    display:flex;
+    margin-left: 600px;
+}
+.service-card1
+{
+    h2
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 200; 
+    }
+    p
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 700; 
+    }
+    margin-right: 50px;
+}
+.service-card2
+{
+    h2
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 200; 
+    }
+    p
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 700; 
+    }
+}
+.service-card3
+{
+    h2
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 200; 
+    }
+    p
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2;
+        font-weight: 700; 
+    }
+    margin-right: 30px;
+}
+.service-card4
+{
+    h2
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2ch;
+        font-weight: 200; 
+    }
+    p
+    {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 2;
+        font-weight: 700; 
+    }
+}
+.service-content2
+{
+    padding-left: 1rem;
+    display:flex;
+    margin-left: 600px;
+}
+.redirection
+{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 2ch;
+    font-weight: 200; 
+    margin-top: 20px;
+    margin-left: 616px
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: black;
+    margin-right: 1100px;
+    text-decoration: none;
+    padding: 0.2rem 0.6rem;
+    transition: color 0.3s;
+    border-radius: 10px;
+    
+    &:hover {
+      background-color: #363b3e;
+      color:#f8f7f9 ;
+    }
+    
+    &.active {
+      font-weight: 600;
+    }
+  }

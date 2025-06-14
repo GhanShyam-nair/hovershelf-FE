@@ -1,0 +1,154 @@
+<div class="nav-menu__wrapper">
+    <div class="nav-menu__container">
+        <div class="nav-menu__contact-left">
+            <div class="nav-contact__c-logo is--top">
+                <img src="../../../assets/top.jpg" loading="eager" alt="" class="nav-contact__logo is--top">
+            </div>
+            <div class="nav-contact__c-info-grid">
+                <div class="nav-contact__info-grid text--fluo-green">
+                    <div class="big-paragraph">In the Middle of Nowhere (Bangalore,India)</div>
+                    <a href="mailto:help@hovershelf.io" class="big-paragraph is--link text--fluo-green">Email Us </a>
+                    <div class="big-paragraph">+91 8310731681</div>
+                </div>
+            </div>
+            <div class="nav-contact__c-logo is--bottom">
+                <img src="../../../assets/bottom.jpg" loading="eager" alt="" class="nav-contact__logo is--bottom">
+            </div>
+            <div class="nav-menu-contact__side-borders"></div>
+        </div>
+
+        <!-- Right side with form -->
+        <div class="nav-menu__contact-right">
+            <div class="nav-menu-link--exit" onclick="window.history.back()">
+                <svg viewBox="0 0 12 12" class="close-btn__icon-svg">
+                    <path d="M1.16667 11.6667L0 10.5L4.66667 5.83333L0 1.16667L1.16667 0L5.83333 4.66667L10.5 0L11.6667 1.16667L7 5.83333L11.6667 10.5L10.5 11.6667L5.83333 7L1.16667 11.6667Z" fill="currentColor" class="close-btn__icon-path"></path>
+                </svg>
+            </div>
+            <div class="mobile-back-btn is--menu-exit" onclick="window.history.back()">
+                <div class="mobile-back-btn__inner is--dark">
+                    <svg viewBox="0 0 8 5" fill="none" class="mobile-back-btn__icon-svg">
+                        <path d="M7.1094 4.00002L4.0547 0.945315L1 4.00002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="mobile-back-btn__icon-path"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="nav-menu__title text--dark-green">Contact us</div>
+            
+            <div class="nav-drop__c-contact-form is--multi-step-form">
+                <form id="contact-form" name="contact-form" method="get" class="nav-drop__contact-form" *ngIf="isSuccessMessageVisible !== 'done'">
+                    <div class="contact-form__c-tabs">
+                        <div class="contact-form__c-tab-menu" role="tablist">
+                            <a data-tab="tab1" class="tab-link1" [class.active]="activeTab === 'tab1'" href="#tab1-content" role="tab" aria-controls="tab1-content" aria-selected="true" (click)="switchTab('tab1',$event)">
+                                <div class="medium-paragraph">1/2 <span class="is--mobile-hidden">Your contact information</span></div>
+                            </a>
+                            <a data-tab="tab2" class="tab-link2" [class.active]="activeTab === 'tab2'" href="#tab2-content" role="tab" aria-controls="tab2-content" aria-selected="false" (click)="switchTab('tab2',$event)">
+                                <div class="medium-paragraph">2/2 <span class="is--mobile-hidden" >Your project</span></div>
+                            </a>
+                        </div>
+                        
+                        <div class="contact-form__c-tab-content">
+                            <!-- Tab 1 content -->
+                            <div id="tab1-content" class="contact-form__tab-content active" role="tabpanel" [class.active]="activeTab === 'tab1'" aria-labelledby="tab1">
+                                <div class="contact-form__field-grid is--two-column">
+                                    <div class="contact-form__c-field">
+                                        <label for="first-name" class="contact-form__field-label">Forename*</label>
+                                        <input class="contact-form-field" maxlength="256" name="first-name" type="text" id="first-name" required #firstNameInput >
+                                    </div>
+                                    <div class="contact-form__c-field">
+                                        <label for="last-name" class="contact-form__field-label">Name*</label>
+                                        <input  class="contact-form-field" maxlength="256" name="last-name" type="text" id="last-name" required #lastNameInput>
+                                    </div>
+                                    <div class="contact-form__c-field">
+                                        <label for="email" class="contact-form__field-label">Email*</label>
+                                        <input  class="contact-form-field" maxlength="256" name="email" type="email" id="email" required #emailInput>
+                                    </div>
+                                    <div class="contact-form__c-field">
+                                        <label for="phone" class="contact-form__field-label">Telephone*</label>
+                                        <input  class="contact-form-field" maxlength="256" name="phone" type="tel" id="phone" required #phoneInput>
+                                    </div>
+                                    <div class="contact-form__c-btn">
+                                        <div class="btn is--dark-green is--contact-form__next-btn" id="next-btn" (click)="onNextButtonClick()">
+                                            <div class="btn-text">Next</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="tab2-content" class="contact-form__tab-content" role="tabpanel" aria-labelledby="tab2" [class.active]="activeTab === 'tab2'">
+                                <div class="contact-form__field-grid">
+                                    <div class="contact-form__c-field">
+                                        <label for="description" class="contact-form__field-label">Description*</label>
+                                        <textarea id="description" name="description" maxlength="5000" required class="contact-form-field is--text-area"></textarea>
+                                    </div>
+                                    <div class="contact-form__c-field">
+                                        <label for="budget" class="contact-form__field-label">Budget*</label>
+                                        <div class="contact-form__c-dropdown" [class.open]="isDropdownOpen">
+                                            <div class="contact-form__dropdown-toggle text--dark-green" (click)="toggleDropdown()">
+                                                <div class="regular-paragraph">{{ selectedBudget || 'Your budget' }}</div>
+                                                <div class="deploy-btn text--dark-green">
+                                                    <img loading="lazy" src="../../../assets/dropdownsvg.svg" alt="" class="deploy-btn__svg">
+                                                </div>
+                                            </div>
+                                            <div class="contact-form__dropdown is--open-up bg--light-green" [class.open]="isDropdownOpen">
+                                                <!-- Hidden select for form submission -->
+                                                <select id="budget" name="budget" required class="contact-form__dropdown-select" [(ngModel)]="selectedBudgetValue">
+                                                    <option value="0_to_5">Between 0 and 5K Rs</option>
+                                                    <option value="5_to_10">Between 5 and 10K Rs</option>
+                                                    <option value="10_to_15">Between 10 and 15K Rs</option>
+                                                    <option value="15_to_30">Between 15 and 30K Rs</option>
+                                                    <option value="30_to_50">Between 30 and 50K Rs</option>
+                                                    <option value="50_to_100">Between 50K and 1Lac Rs</option>
+                                                    <option value="more_than_100">Over 1Lac Rs</option>
+                                                </select>
+                                                
+                                                <!-- Visible dropdown options -->
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('0_to_5', 'Between 0 and 5K Rs')">Between 0 and 5K Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('5_to_10', 'Between 5 and 10K Rs')">Between 5 and 10K Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('10_to_15', 'Between 10 and 15K Rs')">Between 10 and 15K Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('15_to_30', 'Between 15 and 30K Rs')">Between 15 and 30K Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('30_to_50', 'Between 30 and 50K Rs')">Between 30 and 50K Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('50_to_100', 'Between 50K and 1Lac Rs')">Between 50K and 1Lac Rs</div>
+                                                <div class="contact-form__dropdown-option" (click)="selectBudget('more_than_100', 'Over 1Lac Rs')">Over 1Lac Rs</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-form__c-btn">
+                                        <div class="round-btn is--dark-green is--contact-form__back-btn" id="back-btn" (click)="onBackButtonClick()">
+                                            <img loading="lazy" src="../../../assets/backcontact.svg" alt="Arrow icon" class="back-btn__icon">
+                                        </div>
+                                        <button type="submit" class="btn is--dark-green is--multi-step-submit"  (click)="sendForm($event)">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Success message -->
+                <div class="contact-form__success-container" role="region" aria-label="contact-form success" [ngClass]="{'active': isSuccessMessageVisible === 'done'}">
+                    <div class="contact-form__c-success">
+                        <div class="title-h3 text--dark-green">Your message has been sent</div>
+                        <div class="contact-form-success__c-text">
+                            <div class="medium-paragraph text--dark-green">
+                                Our teams will get back to you as soon as possible. <br>
+                                In the meantime, do not hesitate to visit our Media:
+                            </div>
+                        </div>
+                        <a href="https://hovershelf.io/home" target="_blank" class="btn is--dark-outline">
+                            <div class="btn-text">Back to home page</div>
+                            <img src="../../../assets/loopicon.svg" loading="lazy" alt="The media icon loop" class="btn-icon" >
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Error message -->
+                <div class="contact-form__error-container is--nav-contact" role="region" aria-label="contact-form failure" [class.active]="isSuccessMessageVisible=='notdone'">
+                    <div class="contact-form__c-error">
+                        <div class="contact-form__error">
+                            <div class="regular-paragraph text--orange">Oops! An error has occurred.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

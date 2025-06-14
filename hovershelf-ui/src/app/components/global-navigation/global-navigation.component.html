@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <div class="navbar-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../../assets/logo.png" alt="HoverShelf Logo">
+        </a>
+      </div>
+      <div class="navbar-options">
+        <div class="nav-items">
+          <ul class="nav-links">
+            <li *ngFor="let item of navItems">
+              <a [routerLink]="item.path" routerLinkActive="active" class="nav-link">
+                {{ item.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-actions">
+          <a routerLink="/shop" routerLinkActive="active" class="cta-button">Shop</a>
+        </div>
+    </div>
+  </div>
